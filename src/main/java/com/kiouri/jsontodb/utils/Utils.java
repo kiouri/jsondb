@@ -1,9 +1,11 @@
 package com.kiouri.jsontodb.utils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -89,11 +91,29 @@ public class Utils {
 		return text;
 	}
 	
-	public static String getStrFromFile(String pathToFile) throws IOException {
-		String content = Files.readString(Path.of(pathToFile), StandardCharsets.UTF_8);
-		return content;
-	}
+//	public static String getStrFromFile(String pathToFile) throws IOException {
+//		String content = Files.readString(Path.of(pathToFile), StandardCharsets.UTF_8);
+//		return content;
+//	}
 			
+	public static  String getStrFromFile(String file) throws IOException {
+	    BufferedReader reader = new BufferedReader(new FileReader (file));
+	    String         line = null;
+	    StringBuilder  stringBuilder = new StringBuilder();
+	    String         ls = System.getProperty("line.separator");
+
+	    try {
+	        while((line = reader.readLine()) != null) {
+	            stringBuilder.append(line);
+	            stringBuilder.append(ls);
+	        }
+
+	        return stringBuilder.toString();
+	    } finally {
+	        reader.close();
+	    }
+	}
+	
 	public static String tagsToString(List<Tag> tags) {
 		String result = "";
 		for (Tag tag : tags) {
