@@ -26,7 +26,7 @@
 			<email>kiouri@gmail.com</email>
 		</developer>
 	</developers>
-<!--	<distributionManagement>
+	<!--	<distributionManagement>
 		<snapshotRepository>
 			<id>sonatype-nexus-snapshots</id>
 			<name>Sonatype Nexus Snapshots</name>
@@ -38,18 +38,18 @@
 			<url>http://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</repository>
 	</distributionManagement>
--->	
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
-    </distributionManagement>	
-	
+-->
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 	<scm>
 		<connection>scm:git:git@github.com:kiouri/jsontodb.git</connection>
 		<developerConnection>scm:git:git@github.com:kiouri/jsontodb.git</developerConnection>
@@ -186,11 +186,11 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.5.0</version>
 		</dependency>
-<!--		<dependency>
+		<!--		<dependency>
 			<groupId>ru.homyakin</groupId>
 			<artifactId>iuliia-java</artifactId>
 			<version>1.8</version>
 		</dependency>
--->		
+-->
 	</dependencies>
 </project>
