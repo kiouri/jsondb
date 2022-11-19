@@ -20,8 +20,8 @@ import org.apache.commons.io.IOCase;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 
-import ru.homyakin.iuliia.Schemas;
-import ru.homyakin.iuliia.Translator;
+//import ru.homyakin.iuliia.Schemas;
+//import ru.homyakin.iuliia.Translator;
 
 public class Utils {
 	
@@ -234,10 +234,10 @@ public class Utils {
     	file.delete();
     }
     
-    public static String transliterate(String inStr) {
-    	Translator translator = new Translator(Schemas.ICAO_DOC_9303);
-        return translator.translate(inStr); 
-    }
+//    public static String transliterate(String inStr) {
+//    	Translator translator = new Translator(Schemas.ICAO_DOC_9303);
+//        return translator.translate(inStr); 
+//    }
         
 //    /////////////////////////////////////////////
 //	public static void main(String[] args) {		

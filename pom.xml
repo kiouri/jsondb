@@ -174,10 +174,11 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.5.0</version>
 		</dependency>
-		<dependency>
+<!--		<dependency>
 			<groupId>ru.homyakin</groupId>
 			<artifactId>iuliia-java</artifactId>
 			<version>1.8</version>
 		</dependency>
+-->		
 	</dependencies>
 </project>
