@@ -26,20 +26,6 @@
 			<email>kiouri@gmail.com</email>
 		</developer>
 	</developers>
-	<!--	<distributionManagement>
-		<snapshotRepository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>http://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>http://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-		</repository>
-	</distributionManagement>
--->
-
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -51,9 +37,9 @@
 		</repository>
 	</distributionManagement>
 	<scm>
-		<connection>scm:git:git@github.com:kiouri/jsontodb.git</connection>
-		<developerConnection>scm:git:git@github.com:kiouri/jsontodb.git</developerConnection>
-		<url>https://github.com/kiouri/jsontodb/tree/main</url>
+		<connection>scm:git:git@github.com:kiouri/jsondb.git</connection>
+		<developerConnection>scm:git:git@github.com:kiouri/jsondb.git</developerConnection>
+		<url>https://github.com/kiouri/jsondb/tree/main</url>
 	</scm>
 	<build>
 		<plugins>
@@ -160,17 +146,11 @@
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.5.11</version>
-		</dependency>
+		</dependency> 
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>42.5.0</version>
 		</dependency>
-		<!--		<dependency>
-			<groupId>ru.homyakin</groupId>
-			<artifactId>iuliia-java</artifactId>
-			<version>1.8</version>
-		</dependency>
--->
 	</dependencies>
 </project>
