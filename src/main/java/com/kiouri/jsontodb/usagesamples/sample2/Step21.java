@@ -42,7 +42,7 @@ public class Step21 {
 		
 		DataLoader dataLoader = new DataLoader();
 		String cuirrentTime = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(new Date());
-		String insertSQLSTR = dataLoader.getInsSQLStmtsAsString(pathToSrcJson, pathToDescList, cuirrentTime);
+		String insertSQLSTR = dataLoader.generateInsSQLStmtsFromFileToStr(pathToSrcJson, pathToDescList, cuirrentTime);
 		System.out.println("4. Generated insert ddl statements");
 		sqlScriptExecutor.executeSQLScriptFromStr(insertSQLSTR, pathToDBConfig);
 		System.out.println("5. Executed insert sql statements");

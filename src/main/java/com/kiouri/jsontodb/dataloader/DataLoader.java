@@ -38,7 +38,7 @@ public class DataLoader {
 	private List<Tag> ddlTags;
 
 
-	public List<String> getInsSQLStmtsAsList(String myjson, List<Tag> inDDLTags,  String jobID) throws Exception {
+	public List<String> gnerateInsSQLStmtsFromStrToStr(String myjson, List<Tag> inDDLTags,  String jobID) throws Exception {
 		JSONObject obj = new JSONObject(myjson);
 		this.ddlTags = inDDLTags;
 		//Preparing tag list without db  specific
@@ -53,8 +53,8 @@ public class DataLoader {
 		return insertStmts;
 	}
 	
-	public String getInsSQLStmtsAsString(String myjson, List<Tag> inDDLTags, String jobID) throws Exception {
-		List<String> stmts = getInsSQLStmtsAsList(myjson, inDDLTags, jobID);
+	public String generateInsSQLStmtsFromStrToStr(String myjson, List<Tag> inDDLTags, String jobID) throws Exception {
+		List<String> stmts = gnerateInsSQLStmtsFromStrToStr(myjson, inDDLTags, jobID);
 		StringBuffer sb = new StringBuffer();
 		sb.append(Utils.disableAllTriggersForAllTables(inDDLTags));
 		for (String stmt : stmts) {
@@ -66,17 +66,17 @@ public class DataLoader {
 		return insertStmtsStr;
 	}
 
-	public String getInsSQLStmtsAsString(String pathToSrcJson, String pathToDescList, String jobID) throws Exception {
+	public String generateInsSQLStmtsFromFileToStr(String pathToSrcJson, String pathToDescList, String jobID) throws Exception {
 		String srcJsonStr = Utils.getStrFromFile(pathToSrcJson);
 		SerDeTagsToJSON serdetagstoJSON = new SerDeTagsToJSON();
 		String serializedJSON = Utils.getStrFromFile(pathToDescList);
 		List<Tag> tagsDDL = serdetagstoJSON.deserFromJSON(serializedJSON);
-		String insertStmtsStr = getInsSQLStmtsAsString(srcJsonStr, tagsDDL, jobID);
+		String insertStmtsStr = generateInsSQLStmtsFromStrToStr(srcJsonStr, tagsDDL, jobID);
 		return insertStmtsStr;
 	}
 	
-	public void getInsSQLStmtsFromFilesToFiles(String pathToSrcJson, String pathToDescList, String pathToGeneratedSQL, String jobID) throws Exception {
-		String insertStmtsStr = getInsSQLStmtsAsString(pathToSrcJson, pathToDescList, jobID);
+	public void generateInsSQLStmtsFromFileToFile(String pathToSrcJson, String pathToDescList, String pathToGeneratedSQL, String jobID) throws Exception {
+		String insertStmtsStr = generateInsSQLStmtsFromFileToStr(pathToSrcJson, pathToDescList, jobID);
 		Utils.writeStrToFile(insertStmtsStr, pathToGeneratedSQL);		
 	}
 	

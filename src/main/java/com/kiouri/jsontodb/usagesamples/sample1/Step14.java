@@ -15,7 +15,7 @@ public class Step14 {
 		String pathToGeneratedSQL = getFullPathToSQLFile(pathToSrcJson);
 		DataLoader dataLoader = new DataLoader();
 		String cuirrentTime = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(new Date());
-		dataLoader.getInsSQLStmtsFromFilesToFiles(pathToSrcJson, pathToDescList, pathToGeneratedSQL,  cuirrentTime);
+		dataLoader.generateInsSQLStmtsFromFileToFile(pathToSrcJson, pathToDescList, pathToGeneratedSQL,  cuirrentTime);
 		System.out.println("Generated file : " + pathToGeneratedSQL);
 	}
 
