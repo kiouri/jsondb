@@ -101,7 +101,9 @@
 </dependency>
 ```
 
-[maven central repository](https://search.maven.org/artifact/io.github.kiouri/jsondb/0.0.1/jar)
+[nexus repositori manager](https://s01.oss.sonatype.org/#nexus-search;quick~kiouri)  
+[maven central repository](https://search.maven.org/artifact/io.github.kiouri/jsondb/0.0.2/jar)
+
 
 # Примеры использования
 В пакете ```com.kiouri.jsontodb.usagesamples``` содержаться примеры использования данного решения   
